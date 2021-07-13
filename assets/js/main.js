@@ -28,7 +28,6 @@ const render = () => {
     }    
 };
 const validacion = (elemento) => {
-    console.log(elemento);
     informacion.innerHTML = `
         <strong>Departamento: ${elemento.text}</strong>
         <br>
