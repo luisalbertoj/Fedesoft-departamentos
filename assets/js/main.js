@@ -18,7 +18,7 @@ const render = () => {
     for (const departamento of departamentos) {
         const option = document.createElement('option');
         option.id = departamento.id;
-        option.value = departamento.ciudades[0];
+        option.value = departamento.ciudad;
         option.text = departamento.departamento;
         botones.push(option);
         select.appendChild(option);
@@ -27,14 +27,14 @@ const render = () => {
         boton.onclick = function () {validacion(boton)};
     }    
 };
-const validacion = (elemento, ciudad, url) => {
+const validacion = (elemento) => {
     console.log(elemento);
     informacion.innerHTML = `
         <strong>Departamento: ${elemento.text}</strong>
         <br>
-        <strong>Ciudad: ${ciudad}</strong>
+        <strong>Capital: ${elemento.value}</strong>
         <br>
-        <strong>Mas informacion: ${url}</strong>
+        <strong>Mas informacion: <a href='${departamentos[elemento.id].url}' target="_blank">${departamentos[elemento.id].url}</a></strong>
         <br>
     `;
 };
